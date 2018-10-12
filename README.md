@@ -1,49 +1,52 @@
+Translate
+Turn off instant translation
+4031/5000
 # jsfour-mdc
 
-Mobile Data Computer, en polisdator som finns i alla polisbilar där du kan göra följande:
+Mobile Data Computer, a police station located in all police cars where you can do the following:
 
-(OBS! Kolla på bilderna längst ner för att lättare förstå)
+(NOTE: Check out the pictures at the bottom for easier understanding)
 
-* Söka efter personer via personnummer
-  - Här kan du se om en person är efterlyst och dess brottsregistret, även lite grundläggande information. Den hämtar brotts-inforamtion från mitt brottsregister-script
-* Söka upp bilar via reggnummer
-  - Här ser du vem som äger bilen, om bilen har fått några anmärkningar vid tidigare kontroll samt om den är besiktigad
-* Skriva incidenter
-  - Här kan du skriva ned olika händelser som sker vid ett brott för att senare skapa en efterlysning så kollegorna vet varför personen är efterlyst
-* Efterlysningar
-  - Här kan du se alla personer som är efterlysta samt lägga in efterlysningar
+* Search for people via social security number
+  - Here you can see if a person is wanted and its criminal record, even some basic information. It retrieves criminal inforamtion from my criminal record script
+* Search for cars via registration number
+  - Here you see who owns the car, if the car has received any remarks on previous checks and whether it is inspected
+* Write incidents
+  - Here you can write down different events that occur in a crime to later create a request so colleagues know why the person is wanted
+* Requests
+  - Here you can see all the people who are wanted and submit requests
 * DNA
-  - För er som använder mitt DNA-script så kan man nu ladda upp DNA via den här datorn. För er som inte använder det så bortse från den funktionen.
-* Regelverk
-  - Mest en utfyllnadsgrej men kan vara trevligt att ha om poliserna måste kolla upp någon lag
+  - For those using my DNA script, you can now upload DNA through this computer. For those who do not use it, do not ignore that feature.
+* Rules
+  - Most of the stuff, but may be nice if the police have to check out any teams
 
 ### LICENSE
-Du får mer än gärna ändra vad du vill i scriptet men du får INTE sälja vidare scriptet eller ladda upp det på nytt, hänvisa folket hit istället.
+You are more than welcome to change what you want in the script but you should NOT resell the script or reload it again, refer the people here instead.
 
 ### INSTALLATION
-För att scriptet ska fungera så behöver du använda dig av ESX.
+For the script to work, you need to use ESX.
 
-* Kör SQL-filen, får du error så får du importera de manuellt. Vissa (dåliga) SQL-program klarar inte av primary keys
-* Lägg till lastdigits i tabellerna users och characters, <a href="https://github.com/jonassvensson4/jsfour-register">jsfour-register<a/> har en SQL-fil du kan köra
-  - Du måste ha ett script, alternativt lägga in lastdigits själv på alla användare då scriptet kräver detta. Du kan även använda mitt jsfour-register
-* Använder du inte mitt <a href="https://github.com/jonassvensson4/jsfour-brottsregister">jsfour-brottsregister<a/> så kommer du förmodligen få en error, rekommenderar dig att använda det. Alternativt ändra om i server.lua
-* Har du lagt till egna polisbilar så måste du lägga till modellnamnet i config.lua
-* Lägg till alla poliser i html/assets/js/passwords.js. Det står vad som behvövs där. Vid nyrekrytering så måste scriptet alltså startas om. Alternativt så får den personen använda något annat lösenord tillsvidare
-* Har du den senaste versionen av esx_vehicleshop så måste du ersätta orginalfilerna med de som ligger i mappen optional
+* Run the SQL file
+* Add load pointers to the users and characters tables, <a href="https://github.com/jonassvensson4/jsfour-register"> jsfour registry <a/> has an SQL file you can run
+  - You must have a script, alternatively, load the last word yourself to all users as the script requires this. You can also use my jsfour registry
+* If you do not use my <a href="https://github.com/jonassvensson4/jsfourbrottsregister"> jsfour crime register <a/> you will probably get an error, recommend using it. Alternatively, change to server.lua
+* If you have added your own police cars then you must add the model name to config.lua
+* Add all police in html / assets / js / passwords.js. It says what is needed there. In case of recruitment, the script must be restarted. Alternatively, that person will be able to use another password permanently
+* If you have the latest version of esx_vehicleshop then you must replace the original files with those contained in the optional folder
   
 ### GUIDE
-* För att öppna datorn så måste polisbilen så still, du klickar sedan på Y
-* För att ta bort en anmärkning på bilen eller något ur brottsregistret så klickar du på den raden du vill ta bort. Här nedan så står det Test (2018-08-10) i brottsregistret och Fortkörning (2018-07-30). Det är alltså dessa du kan klicka på så tas de bort från databasen
-* Det finns en tab i menyn som inte alla ser. "Loggboken" ser endast de som har adminrättigheter i html/assets/js/passwords.js. Där loggas allt som tas bort. Där står det vem som tagit bort det och vad som togs bort
-* Minutstecknet under PERSONINFO vid efterlyst tar bort efterlysningen om personen är efterlyst. Den försvinner även om du tar bort efterlysningen från efterlys-taben
-* Vill du efterlysa någon men du saknar uppgifter om en person t.ex personnumret så kan du skriva dit Unknown, okänd eller okänt istället
-* Det finns en rad som heter besiktigad under FORDONSINFO. För tillfället går den raden inte att ändra. Den kommer alltid stå som JA på alla bilar. Det är planerat att det ska komma ett script för detta då det här är inget som polisen ska kunna ändra
-* Vill du lägga till lagar i REGELVERKET så gör du det i html/assets/js/regelverk.js
+* To open the computer, the police car must be stationary, then click Y
+* To remove a remark on the car or any of the criminal records, click on the line you want to delete. Below is the Test (2018-08-10) in the Criminal Record and Fort Running (2018-07-30). That's what you can click on, they are removed from the database
+* There is a loss in the menu that does not all see. The "logbook" only lists those who have admin rights in html / assets / js / passwords.js. All logs will be logged. It says who took it away and what was taken away
+* The minus sign under PERSONAL INFO when requested will remove the enrollment if the person is requested. It also disappears even if you remove the enlightenment from the backlight tab
+* If you want to call someone but you do not have information about a person eg the person number you can write your unknown, unknown or unknown instead
+* There is a row named under FORDONSINFO. Currently, that row does not change. It will always be YES on all cars. It is planned that there will be a script for this as this is nothing that the police should be able to change
+* Do you want to add layers to the REGELWORK, so do it in html / assets / js / regelverk.js
 
 ### Screenshot
-![screenshot](https://i.gyazo.com/f1686551d68855578946b48b3dce6be7.png)
-![screenshot](https://i.gyazo.com/dbd27b12f6df5ad8784ddd63eb23afdc.png)
-![screenshot](https://i.gyazo.com/3859cdd56e2be8a5a18c8ea4f4c0a2d7.png)
-![screenshot](https://i.gyazo.com/45614bc6e29e50e2ee136f7e68d7ec27.png)
-![screenshot](https://i.gyazo.com/b60e73635bd1aa7c2af55527d3e0c724.png)
-![screenshot](https://i.gyazo.com/98fb97ef1ce1d706b710862f899cad3e.png)
+[Screenshot] (https://i.gyazo.com/f1686551d68855578946b48b3dce6be7.png)
+[Screenshot] (https://i.gyazo.com/dbd27b12f6df5ad8784ddd63eb23afdc.png)
+[Screenshot] (https://i.gyazo.com/3859cdd56e2be8a5a18c8ea4f4c0a2d7.png)
+[Screenshot] (https://i.gyazo.com/45614bc6e29e50e2ee136f7e68d7ec27.png)
+[Screenshot] (https://i.gyazo.com/b60e73635bd1aa7c2af55527d3e0c724.png)
+[Screenshot] (https://i.gyazo.com/98fb97ef1ce1d706b710862f899cad3e.png)
